@@ -1,4 +1,6 @@
 import time
+import numpy
+
 
 fibCall = {}
 
@@ -24,14 +26,15 @@ def fib(n: int):
     return fib(n-1) + fib(n-2)
 
 
+k = 200
 
 t1 = time.time()
-result = fib_hashMemo(17)
+result = fib_hashMemo(k)
 t2 = time.time()
 print(f"Hash fib result: {result}, difference in time = {t2 - t1}")
 
 t3 = time.time()
-result = fib(17)
+result = fib(k)
 t4 = time.time()
 
 print(f"Normal fib result: {result}, difference in time = {t4- t3}")
